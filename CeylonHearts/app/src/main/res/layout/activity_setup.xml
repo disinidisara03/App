@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".SetupActivity">
+
+   <TextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="50dp"
+       android:padding="20dp"
+       android:text="My Account Details"
+       android:textColor="@color/white"
+       android:layout_marginLeft="50dp"
+       android:layout_marginRight="4dp"
+       android:textSize="30sp">
+
+   </TextView>
+
+    <EditText
+        android:id="@+id/setup_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/input"
+        android:hint="Username"
+        android:padding="15dp"
+        android:textColorHint="@color/black"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/setup_fullname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/input"
+        android:hint="Full name"
+        android:padding="15dp"
+        android:textColorHint="@color/black"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/setup_information_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="550dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/button"
+        android:hint="Create Account"
+        android:padding="15dp"
+        android:textColorHint="@color/black"
+        app:backgroundTint="@color/white" />
+
+</RelativeLayout>
