@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -18,9 +19,21 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.regex.Pattern;
+
 public class MainActivity extends AppCompatActivity {
 
-    EditText Email,Password;
+    //Mujeeb
+    private static final Pattern PASSWORD_PATTERN = Pattern.compile("^" +
+            "?=.*[0-9])" +
+            "(?=.*[a-z])" +
+            "(?=.*[A-Z])" +
+            "(?=.*[@#$%^&+=])" +
+            "(?=\\S+$)" +
+            ".{6,20}" +
+            "$");
+
+    EditText Email, Password;
     Button btnsave;
     DatabaseReference reff;
     Member member;
@@ -32,11 +45,42 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        LoginHere=(TextView) findViewById(R.id.login);
+        //Mujeeb
+        private boolean validateEmail(){
+            String emailInput = Email.getEditText().getText().toString().trim();
+
+            if (emailInput.isEmpty()) {
+                Email.setError("Field can't be empty.");
+                return false;
+            } else if (!Patterns.EMAIL_ADDRESS.matcher(emailInput).matches()) {
+                Email.setError("Input a valid Email Address.");
+            } else{
+                Email.setError(null);
+                return true;
+            }
+        };
+
+        //Mujeeb
+        private boolean validatePassword() {
+            String passwordInput = Password.getEditableText().getText().toString().trim();
+
+            if (passwordInput.isEmpty()) {
+                Password.setError("Field can't be Empty.");
+                return false;
+            } else if (!PASSWORD_PATTERN.matcher(passwordInput).matches()) {
+                Password.setError("Password too weak!");
+                return false;
+            } else {
+                Password.setError(null);
+                return true;
+            }
+        }
+
+        LoginHere = (TextView) findViewById(R.id.login);
         LoginHere.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,LoginActivity.class);
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
         });
@@ -45,11 +89,13 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         Password = (EditText) findViewById(R.id.password);
         btnsave = (Button) findViewById(R.id.save);
-        member= new Member();
-        reff= FirebaseDatabase.getInstance().getReference().child("Member");
+        member = new Member();
+        reff = FirebaseDatabase.getInstance().getReference().child("Member");
         btnsave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                validateEmail();
+                validatePassword();
                 member.setEmails(Email.getText().toString().trim());
                 member.setPass(Password.getText().toString().trim());
                 reff.push().setValue(member);
@@ -59,14 +105,14 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
     }
+
     @Override
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
+        if (currentUser != null) {
             reload();
         }
     }
@@ -77,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void AllowUserToLogin() {
-        Intent main = new Intent(MainActivity.this,SetupActivity.class);
+        Intent main = new Intent(MainActivity.this, SetupActivity.class);
         main.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(main);
         finish();
