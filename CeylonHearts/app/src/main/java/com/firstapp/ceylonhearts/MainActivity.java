@@ -24,14 +24,40 @@ import java.util.regex.Pattern;
 public class MainActivity extends AppCompatActivity {
 
     //Mujeeb
-    private static final Pattern PASSWORD_PATTERN = Pattern.compile("^" +
-            "?=.*[0-9])" +
-            "(?=.*[a-z])" +
-            "(?=.*[A-Z])" +
-            "(?=.*[@#$%^&+=])" +
-            "(?=\\S+$)" +
-            ".{6,20}" +
-            "$");
+    private static final Pattern PASSWORD_PATTERN = Pattern.compile("^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$");
+
+    //Mujeeb
+    private  boolean validateEmail(EditText Email){
+        String emailInput = Email.getText().toString();
+        boolean x = Boolean.parseBoolean(null);
+        if (emailInput.isEmpty()) {
+            Email.setError("Field can't be empty.");
+            x = false;
+        } else if (!Patterns.EMAIL_ADDRESS.matcher(emailInput).matches()) {
+            Email.setError("Input a valid Email Address.");
+            x = false;
+        } else{
+            Email.setError(null);
+            x = true;
+        }
+        return x;
+    }
+
+    //Mujeeb
+    private boolean validatePassword(EditText Password) {
+        String passwordInput = Password.getText().toString();
+
+        if (passwordInput.isEmpty()) {
+            Password.setError("Field can't be Empty.");
+            return false;
+        } else if (!PASSWORD_PATTERN.matcher(passwordInput).matches()) {
+            Password.setError("Password should have Minimum eight characters, at least one letter and one number");
+            return false;
+        } else {
+            Password.setError(null);
+            return true;
+        }
+    }
 
     EditText Email, Password;
     Button btnsave;
@@ -44,37 +70,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        //Mujeeb
-        private boolean validateEmail(){
-            String emailInput = Email.getEditText().getText().toString().trim();
-
-            if (emailInput.isEmpty()) {
-                Email.setError("Field can't be empty.");
-                return false;
-            } else if (!Patterns.EMAIL_ADDRESS.matcher(emailInput).matches()) {
-                Email.setError("Input a valid Email Address.");
-            } else{
-                Email.setError(null);
-                return true;
-            }
-        };
-
-        //Mujeeb
-        private boolean validatePassword() {
-            String passwordInput = Password.getEditableText().getText().toString().trim();
-
-            if (passwordInput.isEmpty()) {
-                Password.setError("Field can't be Empty.");
-                return false;
-            } else if (!PASSWORD_PATTERN.matcher(passwordInput).matches()) {
-                Password.setError("Password too weak!");
-                return false;
-            } else {
-                Password.setError(null);
-                return true;
-            }
-        }
 
         LoginHere = (TextView) findViewById(R.id.login);
         LoginHere.setOnClickListener(new View.OnClickListener() {
@@ -94,13 +89,32 @@ public class MainActivity extends AppCompatActivity {
         btnsave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                //Mujeeb
+                if(validateEmail(Email) == true){
+                    if (validatePassword(Password)==true){
+                        member.setEmails(Email.getText().toString().trim());
+                        member.setPass(Password.getText().toString().trim());
+                        reff.push().setValue(member);
+                        Toast.makeText(MainActivity.this, "Data Inserted Successfully", Toast.LENGTH_SHORT).show();
+                        AllowUserToLogin();
+                    }else{
+                        Toast errorToast = Toast.makeText(MainActivity.this, "Please check your Password", Toast.LENGTH_SHORT);
+                        errorToast.show();
+                    }
+                }else{
+                    Toast errorToast = Toast.makeText(MainActivity.this, "Please check your Email Address.", Toast.LENGTH_SHORT);
+                    errorToast.show();
+                }
+
+/*                //Mujeeb
                 validateEmail();
-                validatePassword();
-                member.setEmails(Email.getText().toString().trim());
+                validatePassword();*/
+               /* member.setEmails(Email.getText().toString().trim());
                 member.setPass(Password.getText().toString().trim());
                 reff.push().setValue(member);
                 Toast.makeText(MainActivity.this, "Data Inserted Successfully", Toast.LENGTH_SHORT).show();
-                AllowUserToLogin();
+                AllowUserToLogin();*/
             }
         });
 

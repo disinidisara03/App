@@ -36,8 +36,35 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.UUID;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class PostActivity extends AppCompatActivity {
+    //Mujeeb
+    private Pattern pattern;
+    private boolean matcher;
+
+    private static final String IMAGE_NAME_REGEX = "([^\\s]+(\\.(?i)(jpg|png|gif|bmp))$)";
+
+    public boolean validate(final ImageButton Add_image){
+        pattern = Pattern.compile(IMAGE_NAME_REGEX);
+        matcher = pattern.matcher((CharSequence) Add_image).matches();
+        return true;
+    }
+
+    //Mujeeb
+    private  boolean validateFname(EditText charity_name){
+        String NameInput = charity_name.getText().toString();
+        boolean x = Boolean.parseBoolean(null);
+        if (NameInput.isEmpty()) {
+            charity_name.setError("Field can't be empty.");
+            x = false;
+        }else{
+            charity_name.setError(null);
+            x = true;
+        }
+        return x;
+    }
 
     ImageButton Add_image;
     Button fundraise;
@@ -87,11 +114,29 @@ public class PostActivity extends AppCompatActivity {
         fundraise.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                member.setCharity(comment.getText().toString().trim());
+
+                if(validate(Add_image)==true){
+                    if(validateFname(charity_name)==true){
+                        member.setCharity(comment.getText().toString().trim());
+                        member.setCharity_cause(charity_name.getText().toString().trim());
+                        reffe.push().setValue(member);
+                        Toast.makeText(PostActivity.this, "Data Inserted Successfully", Toast.LENGTH_SHORT).show();
+                        uploadImage();
+                    }else{
+                        Toast errorToast = Toast.makeText(PostActivity.this, "Name of the Fundraiser is required.", Toast.LENGTH_SHORT);
+                        errorToast.show();
+                    }
+                }else{
+                    Toast errorToast = Toast.makeText(PostActivity.this, "Insert an Image.", Toast.LENGTH_SHORT);
+                    errorToast.show();
+                }
+
+
+/*                member.setCharity(comment.getText().toString().trim());
                 member.setCharity_cause(charity_name.getText().toString().trim());
                 reffe.push().setValue(member);
                 Toast.makeText(PostActivity.this, "Data Inserted Successfully", Toast.LENGTH_SHORT).show();
-                uploadImage();
+                uploadImage();*/
             }
         });
     }

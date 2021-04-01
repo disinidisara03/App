@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Patterns;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
@@ -29,6 +30,37 @@ import com.google.firebase.storage.UploadTask;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class SetupActivity extends AppCompatActivity {
+
+
+    //Mujeeb
+    private  boolean validateUsername(EditText Username){
+        String usernameInput = Username.getText().toString();
+        boolean x = Boolean.parseBoolean(null);
+        if (usernameInput.isEmpty()) {
+            Username.setError("Field can't be empty.");
+            x = false;
+        }else{
+            Username.setError(null);
+            x = true;
+        }
+        return x;
+    }
+
+    //Mujeeb
+    private  boolean validateFname(EditText Fullname){
+        String NameInput = Fullname.getText().toString();
+        boolean x = Boolean.parseBoolean(null);
+        if (NameInput.isEmpty()) {
+            Fullname.setError("Field can't be empty.");
+            x = false;
+        }else{
+            Fullname.setError(null);
+            x = true;
+        }
+        return x;
+    }
+
+
     EditText Username,Fullname;
     Button create;
     Member user;
@@ -56,11 +88,30 @@ public class SetupActivity extends AppCompatActivity {
         create.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                user.setEmails(Username.getText().toString().trim());
+
+                //Mujeeb
+                if(validateUsername(Username)==true){
+                    if (validateFname(Fullname)==true){
+                        user.setEmails(Username.getText().toString().trim());
+                        user.setPass(Fullname.getText().toString().trim());
+                        Refuser.push().setValue(user);
+                        Toast.makeText(SetupActivity.this, "Data Inserted Successfully", Toast.LENGTH_SHORT).show();
+                        AllowUserToSetUp();
+                    }else{
+                        Toast errorToast = Toast.makeText(SetupActivity.this, "Name is required.", Toast.LENGTH_SHORT);
+                        errorToast.show();
+                    }
+                }else{
+                    Toast errorToast = Toast.makeText(SetupActivity.this, "Username is required.", Toast.LENGTH_SHORT);
+                    errorToast.show();
+                }
+
+
+/*                user.setEmails(Username.getText().toString().trim());
                 user.setPass(Fullname.getText().toString().trim());
                 Refuser.push().setValue(user);
                 Toast.makeText(SetupActivity.this, "Data Inserted Successfully", Toast.LENGTH_SHORT).show();
-                AllowUserToSetUp();
+                AllowUserToSetUp();*/
             }
         });
     }
