@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1045007375866",
+    "project_id": "ceylonhearts-c53ea",
+    "storage_bucket": "ceylonhearts-c53ea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1045007375866:android:c2dc1321aadefbc2f59843",
+        "android_client_info": {
+          "package_name": "com.firstapp.ceylonhearts"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1045007375866-9ut6gc6p2aomlq5mt860t9n5gj9q6dni.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4UQfTQJHAnwqxafBqAMeNHeRaZaK8-9w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1045007375866-9ut6gc6p2aomlq5mt860t9n5gj9q6dni.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

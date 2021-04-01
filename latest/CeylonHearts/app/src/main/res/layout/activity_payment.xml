@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PaymentActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter Your Donation"
+        android:textSize="30dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:padding="20dp"
+        android:text="Rs:"
+        android:textColor="@color/black"
+        android:textSize="40dp">
+
+    </EditText>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your Name"
+        android:layout_marginTop="170dp"
+        android:textSize="24dp"
+        android:textColor="@color/black">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/firstname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:layout_marginRight="200dp"
+        android:hint="First Name"
+        android:padding="22dp"
+        android:textColor="@color/black"></EditText>
+
+    <EditText
+        android:id="@+id/lastname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="200dp"
+        android:hint="Last Name"
+        android:padding="22dp"
+        android:textColor="@color/black">
+
+    </EditText>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your Email"
+        android:layout_marginTop="270dp"
+        android:textSize="24dp"
+        android:textColor="@color/black">
+
+    </TextView>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:padding="22dp"
+        android:textColor="@color/black"
+        android:hint="Email"
+        android:layout_marginRight="1dp">
+
+    </EditText>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Credit or Debit Number"
+        android:layout_marginTop="360dp"
+        android:textSize="22dp"
+        android:textColor="@color/black">
+
+    </TextView>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="390dp"
+        android:padding="22dp"
+        android:textColor="@color/black"
+        android:hint="Credit or Debit Number"
+        android:layout_marginRight="1dp">
+
+    </EditText>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Security Code"
+        android:layout_marginTop="450dp"
+        android:textSize="24dp"
+        android:textColor="@color/black">
+
+    </TextView>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="480dp"
+        android:padding="22dp"
+        android:textColor="@color/black"
+        android:hint="Security Code"
+        android:layout_marginRight="200dp">
+    </EditText>
+
+    <Button
+        android:id="@+id/messages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="560dp"
+        android:backgroundTint="@color/orange"
+        android:padding="18dp"
+        android:text="Donate"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal">
+
+    </Button>
+
+
+</RelativeLayout>

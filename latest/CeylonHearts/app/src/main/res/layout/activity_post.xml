@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/teal_200"
+    tools:context=".PostActivity">
+
+    <TextView
+        android:id="@+id/start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="100dp"
+        android:text="Start Fundraising"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+
+    <ImageButton
+        android:id="@+id/Add_cause_image"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="70dp"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/select_image" />
+
+    <EditText
+        android:id="@+id/name_of_charity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="450dp"
+        android:ems="10"
+        android:background="@color/white"
+        android:hint="Name of Fundraiser"
+        android:gravity="start|top"
+        android:padding="15dp"
+        android:inputType="textMultiLine" />
+
+    <EditText
+        android:id="@+id/cause"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="550dp"
+        android:ems="10"
+        android:background="@color/white"
+        android:hint="Cause For Fundraising?"
+        android:gravity="start|top"
+        android:padding="15dp"
+        android:inputType="textMultiLine" />
+
+
+
+
+    <Button
+        android:id="@+id/fundraise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="630dp"
+        android:layout_marginLeft="150dp"
+        app:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        android:text="Fundraise" />
+</RelativeLayout>
