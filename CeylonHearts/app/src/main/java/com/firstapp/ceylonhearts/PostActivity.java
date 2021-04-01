@@ -40,7 +40,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class PostActivity extends AppCompatActivity {
-    //Mujeeb
+    //Mujeeb image validation not working properly.
     private Pattern pattern;
     private boolean matcher;
 
@@ -65,6 +65,21 @@ public class PostActivity extends AppCompatActivity {
         }
         return x;
     }
+
+    //Mujeeb
+    private  boolean validateComment(EditText comment){
+        String commentInput = comment.getText().toString();
+        boolean x = Boolean.parseBoolean(null);
+        if (commentInput.isEmpty()) {
+            comment.setError("Field can't be empty.");
+            x = false;
+        }else{
+            comment.setError(null);
+            x = true;
+        }
+        return x;
+    }
+
 
     ImageButton Add_image;
     Button fundraise;
@@ -115,8 +130,8 @@ public class PostActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(validate(Add_image)==true){
-                    if(validateFname(charity_name)==true){
+                if(validateFname(charity_name)==true){
+                    if(validateComment(comment)==true){
                         member.setCharity(comment.getText().toString().trim());
                         member.setCharity_cause(charity_name.getText().toString().trim());
                         reffe.push().setValue(member);
@@ -127,7 +142,7 @@ public class PostActivity extends AppCompatActivity {
                         errorToast.show();
                     }
                 }else{
-                    Toast errorToast = Toast.makeText(PostActivity.this, "Insert an Image.", Toast.LENGTH_SHORT);
+                    Toast errorToast = Toast.makeText(PostActivity.this, "Enter Name.", Toast.LENGTH_SHORT);
                     errorToast.show();
                 }
 
