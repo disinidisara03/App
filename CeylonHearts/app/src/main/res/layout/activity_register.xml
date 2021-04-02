@@ -11,47 +11,236 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <include
-
-            layout="@layout/app_bar_layout"
-            />
 
         <FrameLayout
             android:id="@+id/main_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="50dp">
+            android:layout_marginTop="50dp"/>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/all_users_post_list"
-                android:layout_width="match_parent"
-                android:layout_height="719dp" />
-        </FrameLayout>
 
         <Button
             android:id="@+id/fund"
             android:layout_width="270dp"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/above_container"
             android:layout_marginLeft="250dp"
             android:text="Fundraiser"
             app:backgroundTint="@color/teal_200">
 
         </Button>
-
-
     </RelativeLayout>
 
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navigation_view"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:layout_marginBottom="3dp"
-        app:menu="@menu/navigation_menu" />
+    <!--Scroll View-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+
+                <TextView
+                    android:id="@+id/profile_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="45dp"
+                    android:gravity="start"
+                    android:text="Save Alyssa From Cancer."
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+
+
+                <ImageView
+                    android:id="@+id/image_view"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_height="300dp"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/famer"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:id="@+id/description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:textSize="16sp"
+                    android:text="This woman is named Alyssa, she is a hard-working mother of two who has overcome so many situations on her own. But now is in dier need of your support. Recently she has been diagnosed with cancer that is caused due to chemicals used in fertilizer. As she is in need of this money please make sure to help her and make her overcome her cancer and be cancer free. The cancer that she has is still in her very early stages and can be treated with chemo-therapy. So if you are willing to help Alyassa please donate for her to be cancer free.
+   #cancerfree "
+                    android:textColor="@color/black"/>
+
+
+                <Button
+                    android:id="@+id/donation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="DONATE NOW"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/teal_200" />
+
+
+                <TextView
+                    android:id="@+id/profile_name2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="660dp"
+                    android:gravity="start"
+                    android:text="Provide Food And Shelter For This Family."
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/image_view2"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_height="300dp"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/family"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:id="@+id/description2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:textSize="16sp"
+                    android:text="the family of four needs a home to live in. These people are in poverty because of many reasons but she is a widowed mother of four who cannot find work, as she has difficulty in leaving her kids and also she has no job experiences of any form of knowledge gathered from schooling or other form. She has barely food to feed her children and she is living in the streets. it is no human way to live in such a state, we should come together and help her and her children be human and to feel human. She should be able to live like a human who has facilitates and also to make sure that her kids and her do not starve to death in needs of time."
+                    android:textColor="@color/black"/>
+
+
+                <Button
+                    android:id="@+id/donation2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="DONATE NOW"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/teal_200" />
 
 
 
 
+                <TextView
+                    android:id="@+id/profile_name3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="1300dp"
+                    android:gravity="start"
+                    android:text="Help To Build School"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/image_view3"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_height="300dp"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/children"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:id="@+id/description3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:textSize="16sp"
+                    android:text="A small school in Galle has been under construction for almost five years but nothing has been done because there are many issues with money, they have been not been able to afford money to finish constructing their school and they have been in harsh conditions of working at school and it every student that goes that school has the right to study and be educated and these harsh conditions does not provide enough for these students. They have to always be in various classrooms and not have enough facilities to anyone's expectations. So please donate now to help these children for a better and brighter future."
+                    android:textColor="@color/black"/>
+
+
+                <Button
+                    android:id="@+id/donation3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="DONATE NOW"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/teal_200" />
+
+
+
+                <TextView
+                    android:id="@+id/profile_name4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="1700dp"
+                    android:gravity="start"
+                    android:text="Build A Shelter For Street Dogs"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/image_view4"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_height="300dp"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/dogs"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:id="@+id/description4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:textSize="16sp"
+                    android:text="We have been giving out food and water to many streets dogs as possible in our area, we are doing this with our own personal money but lately we have been hitting a budget and we need more donations to help these dogs. We are trying to build them a shelter house and this will need money to spend on them and we also need food. It would be great if we can fundraise enough money to build them a shelter and buy more food. There lives are at danger living in the streets, they really need your help. So please donate and you also can help us by buying food and sending it via online transaction methods. #saystreetdogs"
+                    android:textColor="@color/black"/>
+
+
+                <Button
+                    android:id="@+id/donation4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="DONATE NOW"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/teal_200" />
+
+
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </androidx.drawerlayout.widget.DrawerLayout>

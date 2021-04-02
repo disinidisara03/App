@@ -38,7 +38,7 @@ public class RegisterActivity extends AppCompatActivity {
     private RecyclerView postList;
     DatabaseReference PostRef;
 
-    private Button fundraise;
+    private Button fundraise,donate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,26 +46,20 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
 
-        drawerLayout=(DrawerLayout) findViewById(R.id.drawable_layout);
-        actionBarDrawerToggle=new ActionBarDrawerToggle(RegisterActivity.this,drawerLayout,R.string.drawer_open,R.string.drawer_close);
-        drawerLayout.addDrawerListener(actionBarDrawerToggle);
-        actionBarDrawerToggle.syncState();
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        navigationView=(NavigationView) findViewById(R.id.navigation_view);
+      /*
         View navView= navigationView.inflateHeaderView(R.layout.navigation_header);
 
         PostRef = FirebaseDatabase.getInstance().getReference().child("Images");
-
         postList = (RecyclerView) findViewById(R.id.all_users_post_list);
         postList.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setReverseLayout(true);
         linearLayoutManager.setStackFromEnd(true);
-        postList.setLayoutManager(linearLayoutManager);
+        postList.setLayoutManager(linearLayoutManager);*/
 
         fundraise = (Button) findViewById(R.id.fund);
-
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+        donate = (Button) findViewById(R.id.donation);
+       /* navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 UserMenuSelector(item);
@@ -73,14 +67,28 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
+*/
+
+        donate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendusertopayment();
+            }
+        });
 
         fundraise.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 sendusertopostactvity();
             }
         });
 
+    }
+
+    private void sendusertopayment() {
+        Intent pay = new Intent(RegisterActivity.this,PaymentActivity.class);
+        startActivity(pay);
     }
 
 
@@ -90,7 +98,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
 
-    @Override
+   /* @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item)
     {
         if (actionBarDrawerToggle.onOptionsItemSelected(item))
@@ -192,7 +200,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         }
     }
-
+*/
 
 
 
