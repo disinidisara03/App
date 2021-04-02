@@ -28,7 +28,6 @@
         app:srcCompat="@drawable/logo" />
 
 
-
     <EditText
         android:id="@+id/email"
         android:layout_width="match_parent"
@@ -87,9 +86,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="550dp"
         android:text="Login With"
-        android:layout_marginLeft="170dp"
+        android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="15dp"/>
+        android:textSize="15dp"
+        android:gravity="center_horizontal" />
 
 
     <LinearLayout

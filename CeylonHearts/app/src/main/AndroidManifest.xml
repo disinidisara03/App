@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CeylonHearts">
-        <activity android:name=".AuthenticateActivity"></activity>
+        <activity android:name=".PaymentActivity"></activity>
+        <activity android:name=".AuthenticateActivity" />
         <activity android:name=".PostActivity" />
         <activity android:name=".SetupActivity" />
         <activity android:name=".RegisterActivity" />
