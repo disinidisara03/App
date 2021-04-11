@@ -57,8 +57,13 @@ public class RegisterActivity extends AppCompatActivity {
         linearLayoutManager.setStackFromEnd(true);
         postList.setLayoutManager(linearLayoutManager);*/
 
+
+
         fundraise = (Button) findViewById(R.id.fund);
         donate = (Button) findViewById(R.id.donation);
+
+
+
        /* navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -67,35 +72,62 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
-*/
 
-        donate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendusertopayment();
-            }
-        });
+        */
 
         fundraise.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
-                sendusertopostactvity();
+            public void onClick(View v) {
+                AunthenticateUser();
+            }
+        });
+        donate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendusertoPayment();
             }
         });
 
+
+
+
+
     }
 
-    private void sendusertopayment() {
+    private void AunthenticateUser() {
+        Intent post = new Intent(RegisterActivity.this,AuthenticateActivity.class);
+        startActivity(post);
+    }
+    private void sendusertoPayment() {
         Intent pay = new Intent(RegisterActivity.this,PaymentActivity.class);
         startActivity(pay);
     }
 
+/*//Mujeeb Last
+private void UserMenuSelector(MenuItem item) {
+    switch (item.getItemId()){
+        case R.id.nav_home:
+            Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show();
+            break;
 
-    private void sendusertopostactvity() {
-        Intent post = new Intent(RegisterActivity.this,AuthenticateActivity.class);
-        startActivity(post);
+        case R.id.fund:
+            AunthenticateUser();
+            break;
+
+        case R.id.Contact_Us:
+            Toast.makeText(this, "Conatct Us", Toast.LENGTH_SHORT).show();
+            break;
+
+        case R.id.Payment:
+            Toast.makeText(this, "Payment Method", Toast.LENGTH_SHORT).show();
+            break;
+
+        case R.id.logout:
+            Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show();
+            break;
     }
+}*/
+
 
 
    /* @Override
