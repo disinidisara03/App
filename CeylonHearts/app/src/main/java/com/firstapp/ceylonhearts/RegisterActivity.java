@@ -77,7 +77,8 @@ public class RegisterActivity extends AppCompatActivity {
 
         fundraise.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 AunthenticateUser();
             }
         });
@@ -95,8 +96,9 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void AunthenticateUser() {
-        Intent post = new Intent(RegisterActivity.this,AuthenticateActivity.class);
-        startActivity(post);
+       Intent authenticate = new Intent(RegisterActivity.this,AuthenticateActivity.class);
+       startActivity(authenticate);
+       finish();
     }
     private void sendusertoPayment() {
         Intent pay = new Intent(RegisterActivity.this,PaymentActivity.class);

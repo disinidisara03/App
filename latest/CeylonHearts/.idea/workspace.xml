@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3c123fed-fca3-45f6-9935-8d35fbf388b8" name="Default Changelist" comment="" />
+    <list default="true" id="3c123fed-fca3-45f6-9935-8d35fbf388b8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../CeylonHearts/app/src/main/java/com/firstapp/ceylonhearts/RegisterActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../CeylonHearts/app/src/main/java/com/firstapp/ceylonhearts/RegisterActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -103,9 +106,9 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1621840638096">
+    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1622015549919">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1621840638096" />
+    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1622015549919" />
   </component>
 </project>
