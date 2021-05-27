@@ -137,6 +137,7 @@ public class PostActivity extends AppCompatActivity {
                         reffe.push().setValue(member);
                         Toast.makeText(PostActivity.this, "Data Inserted Successfully", Toast.LENGTH_SHORT).show();
                         uploadImage();
+                        sendusertologin();
                     }else{
                         Toast errorToast = Toast.makeText(PostActivity.this, "Name of the Fundraiser is required.", Toast.LENGTH_SHORT);
                         errorToast.show();
@@ -154,6 +155,11 @@ public class PostActivity extends AppCompatActivity {
                 uploadImage();*/
             }
         });
+    }
+
+    private void sendusertologin() {
+        Intent home = new Intent(PostActivity.this, RegisterActivity.class);
+        startActivity(home);
     }
 
 

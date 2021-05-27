@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/nav_home"
         android:title="Home" />
-    <item android:id="@+id/fund"
+    <item android:id="@+id/btn_fund"
         android:title=" Start a Fundraiser" />
     <item android:id="@+id/Contact_Us"
         android:title="Contact Us"/>

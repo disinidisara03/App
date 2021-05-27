@@ -2,34 +2,18 @@ package com.firstapp.ceylonhearts;
 
 
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.navigation.NavigationView;
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.squareup.picasso.Picasso;
-
 
 public class RegisterActivity extends AppCompatActivity {
     private NavigationView navigationView;
@@ -37,8 +21,8 @@ public class RegisterActivity extends AppCompatActivity {
     private ActionBarDrawerToggle actionBarDrawerToggle;
     private RecyclerView postList;
     DatabaseReference PostRef;
-
-    private Button fundraise,donate;
+    Button donate;
+    Button fundraiser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,61 +30,42 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
 
-      /*
-        View navView= navigationView.inflateHeaderView(R.layout.navigation_header);
-
-        PostRef = FirebaseDatabase.getInstance().getReference().child("Images");
-        postList = (RecyclerView) findViewById(R.id.all_users_post_list);
-        postList.setHasFixedSize(true);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        linearLayoutManager.setReverseLayout(true);
-        linearLayoutManager.setStackFromEnd(true);
-        postList.setLayoutManager(linearLayoutManager);*/
-
-
-
-        fundraise = (Button) findViewById(R.id.fund);
+        fundraiser = (Button) findViewById(R.id.btn_fund);
         donate = (Button) findViewById(R.id.donation);
 
 
-
-       /* navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+        /*fundraiser.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                UserMenuSelector(item);
-                return false;
+            public void onClick(View v) {
+                sendToAuth();
+            }
+        });*/
+
+        fundraiser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendToAuth();
             }
         });
 
 
-        */
-
-        fundraise.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v)
-            {
-                AunthenticateUser();
-            }
-        });
         donate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendusertoPayment();
+                sendToPayment();
             }
         });
 
+    }
 
+    private void sendToAuth() {
 
-
+        Intent auth = new Intent(RegisterActivity.this,AuthenticateActivity.class);
+        startActivity(auth);
 
     }
 
-    private void AunthenticateUser() {
-       Intent authenticate = new Intent(RegisterActivity.this,AuthenticateActivity.class);
-       startActivity(authenticate);
-       finish();
-    }
-    private void sendusertoPayment() {
+    private void sendToPayment() {
         Intent pay = new Intent(RegisterActivity.this,PaymentActivity.class);
         startActivity(pay);
     }

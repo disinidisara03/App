@@ -28,7 +28,6 @@
         app:srcCompat="@drawable/logo" />
 
 
-
     <EditText
         android:id="@+id/email"
         android:layout_width="match_parent"
@@ -39,8 +38,7 @@
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
-        android:padding="08dp"
-        />
+        android:padding="08dp" />
 
     <EditText
         android:id="@+id/password"

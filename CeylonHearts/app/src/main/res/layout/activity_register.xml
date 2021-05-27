@@ -20,15 +20,14 @@
 
 
         <Button
-            android:id="@+id/fund"
+            android:id="@+id/btn_fund"
             android:layout_width="270dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="250dp"
             android:text="Fundraiser"
-            app:backgroundTint="@color/teal_200">
+            app:backgroundTint="@color/teal_200"/>
 
-        </Button>
-    </RelativeLayout>
+    <!--</RelativeLayout>-->
 
     <!--Scroll View-->
     <ScrollView
@@ -39,7 +38,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-
 
 
                 <TextView
@@ -242,5 +240,7 @@
         </LinearLayout>
 
     </ScrollView>
+
+    </RelativeLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -9,10 +9,11 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enter Your Donation"
-        android:textSize="30dp"
         android:layout_marginTop="10dp"
-        android:textColor="@color/black">
+        android:gravity="center"
+        android:text="Enter Your Donation"
+        android:textColor="@color/black"
+        android:textSize="40dp">
 
     </TextView>
 
@@ -24,17 +25,18 @@
         android:padding="20dp"
         android:text="Rs:"
         android:textColor="@color/black"
-        android:textSize="40dp">
+        android:textSize="25dp">
 
     </EditText>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Your Name"
         android:layout_marginTop="170dp"
-        android:textSize="24dp"
-        android:textColor="@color/black">
+        android:gravity="center"
+        android:text="Your Name"
+        android:textColor="@color/black"
+        android:textSize="25dp">
 
     </TextView>
 
@@ -63,10 +65,11 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Your Email"
         android:layout_marginTop="270dp"
-        android:textSize="24dp"
-        android:textColor="@color/black">
+        android:gravity="center"
+        android:text="Your Email"
+        android:textColor="@color/black"
+        android:textSize="25dp">
 
     </TextView>
 
@@ -74,20 +77,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="300dp"
-        android:padding="22dp"
-        android:textColor="@color/black"
+        android:layout_marginRight="1dp"
         android:hint="Email"
-        android:layout_marginRight="1dp">
+        android:padding="22dp"
+        android:textColor="@color/black">
 
     </EditText>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Credit or Debit Number"
         android:layout_marginTop="360dp"
-        android:textSize="22dp"
-        android:textColor="@color/black">
+        android:gravity="center"
+        android:text="Credit or Debit Number"
+        android:textColor="@color/black"
+        android:textSize="25dp">
 
     </TextView>
 
@@ -95,20 +99,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="390dp"
-        android:padding="22dp"
-        android:textColor="@color/black"
+        android:layout_marginRight="1dp"
         android:hint="Credit or Debit Number"
-        android:layout_marginRight="1dp">
+        android:padding="22dp"
+        android:textColor="@color/black">
 
     </EditText>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Security Code"
         android:layout_marginTop="460dp"
-        android:textSize="24dp"
-        android:textColor="@color/black">
+        android:gravity="center"
+        android:text="Security Code"
+        android:textColor="@color/black"
+        android:textSize="25dp">
 
     </TextView>
 
@@ -116,25 +121,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="500dp"
-        android:padding="22dp"
-        android:textColor="@color/black"
+        android:layout_marginRight="200dp"
         android:hint="Security Code"
-        android:layout_marginRight="200dp">
-    </EditText>
+        android:padding="22dp"
+        android:textColor="@color/black"></EditText>
 
     <Button
         android:id="@+id/btn_donate"
-        android:layout_width="match_parent"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="590dp"
         android:backgroundTint="@color/orange"
+        android:gravity="center_horizontal"
         android:padding="18dp"
+        android:layout_marginLeft="45dp"
         android:text="Donate"
         android:textAlignment="center"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center_horizontal">
+        android:paddingLeft="50dp"
+        >
 
     </Button>
 
