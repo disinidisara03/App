@@ -16,7 +16,7 @@
         android:layout_marginTop="20dp"
         android:text="Authenticate Yourself To Fundraise"
         android:textColor="@color/white"
-        android:textSize="25sp"
+        android:textSize="25dp"
         android:textStyle="bold"/>
 
     <ImageView
