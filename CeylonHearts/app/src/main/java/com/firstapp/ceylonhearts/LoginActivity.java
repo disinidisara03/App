@@ -19,10 +19,10 @@ public class LoginActivity extends AppCompatActivity {
     EditText Email, Password;
     Button login;
 
-    //Mujeeb
+    //MJB
     private static final Pattern PASSWORD_PATTERN = Pattern.compile("^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$");
 
-    //Mujeeb
+    //MJB
     private  boolean validateEmail(EditText Email){
         String emailInput = Email.getText().toString();
         boolean x = Boolean.parseBoolean(null);
@@ -39,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
         return x;
     }
 
-    //Mujeeb
+    //MJB
     private boolean validatePassword(EditText Password) {
         String passwordInput = Password.getText().toString();
 
